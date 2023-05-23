@@ -94,3 +94,8 @@ li {
     transition: width .4s ;
   }
 
+  .estJefes{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
