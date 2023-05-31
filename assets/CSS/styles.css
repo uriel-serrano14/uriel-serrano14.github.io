@@ -128,14 +128,81 @@ p {
     margin-top: 50px;
   }
 
-  .imagen {
+  .carrucel img {
+    opacity: 1;
+    transition: opacity 0.4s ease;
+  }
+  
+  .imagen{
     text-align: center;
   }
+
   .imagen img {
-    border: 10px ridge #0f1011b4;
-    
+    border: 10px ridge #0f1011b4;  
+  }
+  
+  .carrucel img.oculto {
+    opacity: 0;
+  }
+
+  .sigant {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .sigant input{
+    border-radius: 25%;
+    font-size: 35px;
+    color: black;
+    border-color: #040b1a;
+    background-color: #004aaa;
+    height: 50px;
+    width: 50px;
+    transition: ease-in-out .4s;
+  }
+
+  .sigant :hover input{
+    font-size: 35px;
+    color: white;
+    border-color: #004aaa;
+    background-color: #040b1a;
+    height: 50px;
+    width: 50px;
+    transition: ease-in-out .4s;
   }
 
   .indices {
-    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
   }
+
+
+  .indices input{
+    margin-left: 5px;
+    margin-right: 5px;
+    border-radius: 100%;
+    border-color: #04003b;
+    background-color: #375072;
+    transition: ease-in .2s;
+  }
+
+  .indices :hover{
+    margin-left: 5px;
+    margin-right: 5px;
+    border-radius: 100%;
+    border-color: #04003b;
+    background-color: #03002b;
+    transition: ease-in .2s;
+  }
+
+  .indices input.activo {
+    margin-left: 5px;
+    margin-right: 5px;
+    border-radius: 100%;
+    border-color: #ffffff;
+    background-color: #03002b;
+    transition: ease-in .2s;
+
+}

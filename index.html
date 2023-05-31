@@ -26,15 +26,22 @@
         </div>
         <hr>
         <div class="carrucel">
-            <div class="imagen">
-                <input type="button" onclick="anterior()">
-                <img id="fotoCarrucel" alt="f">
-                <input type="button" onclick="siguiente()">
+            <div class="imagen">   
+                <img id="fotoCarrucel" alt="f">     
+            </div>
+            <div class="sigant">
+                <div>
+                    <input class="boton" type="button" onclick="anterior()" value="⇦">
+                </div>
+                <div>
+                    <input type="button" onclick="siguiente()" value="⇨">
+                </div>
             </div>
             <div class="indices">
-                <input type="button" onclick="" id="b1">
-                <input type="button" onclick="" id="b2">
-                <input type="button" onclick="" id="b3">
+                <input type="button" onclick="indice(0)">
+                <input type="button" onclick="indice(1)">
+                <input type="button" onclick="indice(2)">
+                <input type="button" onclick="indice(3)">
             </div>
         </div>
         <hr>
@@ -81,20 +88,56 @@
         let imagr = document.getElementById("fotoCarrucel");
         imagr.src = imagenes[indiceActual];
         
+        actualizarBotones();
+        
+        
+        setInterval(siguiente, 4000);
+    
         function siguiente() {
-          indiceActual = (indiceActual + 1) % imagenes.length;
           let imge = document.querySelector("#fotoCarrucel");
-          imge.src = imagenes[indiceActual];
-        }
-
-        function anterior() {
-            indiceActual = (indiceActual - 1 + imagenes.length) % imagenes.length;
-            let imge = document.querySelector("#fotoCarrucel");
+          imge.classList.add("oculto");
+          setTimeout(function() {
+            indiceActual = (indiceActual + 1) % imagenes.length;
             imge.src = imagenes[indiceActual];
+            imge.classList.remove("oculto");
+            actualizarBotones();
+          }, 400);
         }
-  
+    
+        function anterior() {
+          let imge = document.querySelector("#fotoCarrucel");
+          imge.classList.add("oculto");
+          setTimeout(function() {
+            indiceActual = (indiceActual - 1 + imagenes.length) % imagenes.length;
+            imge.src = imagenes[indiceActual];
+            imge.classList.remove("oculto");
+            actualizarBotones();
+          }, 400); 
+        }
+    
+        function indice(a){
+          let imge = document.querySelector("#fotoCarrucel");
+          imge.classList.add("oculto");
+          setTimeout(function() {
+            imge.src = imagenes[a];
+            indiceActual = a;
+            imge.classList.remove("oculto");
+            actualizarBotones();
+          }, 400);
 
-    </script>
+        }
+        function actualizarBotones() {
+            let botones = document.querySelectorAll(".indices input");
+            botones.forEach((boton, index) => {
+                if (index === indiceActual) {
+                    boton.classList.add("activo");
+                } else {
+                    boton.classList.remove("activo");
+                }
+            });
+        }
+
+      </script>
 
 
 </body>
