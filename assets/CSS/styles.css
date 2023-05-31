@@ -128,4 +128,14 @@ p {
     margin-top: 50px;
   }
 
- 
+  .imagen {
+    text-align: center;
+  }
+  .imagen img {
+    border: 10px ridge #0f1011b4;
+    
+  }
+
+  .indices {
+    text-align: center;
+  }

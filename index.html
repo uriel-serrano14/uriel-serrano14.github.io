@@ -8,6 +8,9 @@
     <title> Hollow Knight </title>
 </head>
 <body >
+
+    
+
     <div class="menu">
         <div style="text-align: center;">
             <img src="./assets/Img/logo_hk.png" alt="Titulo" width="550px"> 
@@ -20,6 +23,19 @@
             Combate contra criaturas corrompidas, haz amistad con extraños insectos 
             y resuelve los antiguos misterios que yacen en el corazón del reino.
         </p>
+        </div>
+        <hr>
+        <div class="carrucel">
+            <div class="imagen">
+                <input type="button" onclick="anterior()">
+                <img id="fotoCarrucel" alt="f">
+                <input type="button" onclick="siguiente()">
+            </div>
+            <div class="indices">
+                <input type="button" onclick="" id="b1">
+                <input type="button" onclick="" id="b2">
+                <input type="button" onclick="" id="b3">
+            </div>
         </div>
         <hr>
         <div>  
@@ -58,5 +74,28 @@
         <a href="https://store.steampowered.com/app/367520/Hollow_Knight/" target="_blank" ><img src="./assets/Img/hk-tclogo.png" width="80px"></a>
     </div>
     
+    
+    <script>
+        let imagenes = ["./assets/Img/Carrucel/hk-carrucel1.jpg", "./assets/Img/Carrucel/hk-carrucel4.jpg", "./assets/Img/Carrucel/hk-carrucel3.jpg", "./assets/Img/Carrucel/hk-carrucel2.jpg"];
+        let indiceActual = 0;
+        let imagr = document.getElementById("fotoCarrucel");
+        imagr.src = imagenes[indiceActual];
+        
+        function siguiente() {
+          indiceActual = (indiceActual + 1) % imagenes.length;
+          let imge = document.querySelector("#fotoCarrucel");
+          imge.src = imagenes[indiceActual];
+        }
+
+        function anterior() {
+            indiceActual = (indiceActual - 1 + imagenes.length) % imagenes.length;
+            let imge = document.querySelector("#fotoCarrucel");
+            imge.src = imagenes[indiceActual];
+        }
+  
+
+    </script>
+
+
 </body>
 </html>
