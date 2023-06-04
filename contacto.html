@@ -9,14 +9,54 @@
 </head>
 <body>
     <div class="menu">
-        <form style="margin: 100px;">
-            <label for="nombre">Nombre - Alias</label>
-            <input id="nombre" name="nombre" placeholder="Matias..."/>
+
+        <div class="principal">
+            <a href="./index.html"><img src="./assets/Img/logo_hk.png" width="450px"> </a>
+        </div>
+        <hr>
+
+        <form class="formulario" id="formulario">
+           
+           
+            <div class="grupo">
+                <label class="formLabel" for="nombre">Nombre</label>
+                <input class="formInput" id="nombre">
+                <div class="error" id="errorNo"><b>Formato de Nombre no aceptado, reintente</b></div>
+            </div>
 
 
-        
-    
+
+            <div class="grupo">
+                <label class="formLabel" for="apellido">Apellido</label>   
+                <input class="formInput" id="apellido" name="apellido">
+                <div class="error" id="errorAp"><b>Formato de Apellido no aceptado, reintente</b></div>
+            </div>
+
+
+            <div class="grupo">
+                <label class="formLabel" for="email">Email</label>
+                <input class="formInput" id="email" name="email">
+                <div class="error" id="errorCo"><b>Formato de Correo Electronico no aceptado, reintente</b></div>
+            </div>
+
+                <br>
+
+            <div class="botonGrup">
+                <input class="botonEnviar" type="submit" onclick="return enviarFormulario()" value="Enviar">
+            </div>
+
+            <div id="envio" class="envio"></div>
         </form>
+        
     </div>
+
+    <div class="logo">
+        <a href="https://store.steampowered.com/app/367520/Hollow_Knight/" target="_blank" ><img src="./assets/Img/hk-tclogo.png" width="80px"></a>
+    </div>
+
+    <script src="./assets/Js/formulario.js"></script>
+
+
+
 </body>
 </html>
