@@ -4,6 +4,9 @@ const expresiones = {
 	correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
 }
 
+const enviar = document.createElement("p");
+
+
 let nombre = document.getElementById("nombre");
 let apellido = document.getElementById("apellido");
 let email = document.getElementById("email");
@@ -51,7 +54,8 @@ function enviarFormulario(){
 
 	if(expresiones.correo.test(email.value) && expresiones.apell.test(apellido.value) && expresiones.nomb.test(nombre.value)){
 		envio.classList.add("envio-correcto");
-		envio.innerHTML = "<b>su nombre es: </b>" + nombre.value + " " + apellido.value + ". <b>Su contacto: </b>" + email.value;
+		enviar.textContent = "su nombre es: " + nombre.value + " " + apellido.value + ". Su contacto: " + email.value;
+		envio.appendChild(enviar);
 		return false;
 	}
 
