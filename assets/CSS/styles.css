@@ -33,6 +33,22 @@ body{
   transition: ease-in-out .5s;
 }
 
+ul{
+  text-shadow: none;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-left: 50px;
+  margin-right: 550px;
+  border: 2px solid #d1d1d1;
+  border-radius: 5px;
+  background-color: #182947;
+}
+
+li:hover {
+  background-color:#ff6c17;
+  text-decoration:underline;
+}
+
 .contacto :hover img{
   width: 100px;
   border-radius: 10%;
@@ -150,24 +166,15 @@ p {
     justify-content: space-around;
   }
 
-  .sigant input{
-    border-radius: 25%;
-    font-size: 35px;
-    color: black;
-    border-color: #040b1a;
-    background-color: #004aaa;
-    height: 50px;
-    width: 50px;
-    transition: ease-in-out .4s;
+  .sigant button{
+    
+    background-color: #182947;
+    border: none;
+    transition: ease.4s;
   }
 
-  .sigant :hover input{
-    font-size: 35px;
-    color: white;
-    border-color: #004aaa;
-    background-color: #040b1a;
-    height: 50px;
-    width: 50px;
+  .sigant :hover button{
+    opacity: 0.5;
     transition: ease-in-out .4s;
   }
 
